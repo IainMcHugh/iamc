@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@iamc/goopubtag": ["libs/goopubtag/src/index.ts"]
+      "@iamchu/goopubtag": ["libs/goopubtag/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

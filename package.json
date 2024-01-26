@@ -1,5 +1,5 @@
 {
-  "name": "iamc",
+  "name": "iamchu",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -7,7 +7,6 @@
     "docs:start": "nx run goopubtag-docs:serve",
     "docs:build": "nx run goopubtag-docs:build"
   },
-  "private": true,
   "dependencies": {
     "@swc/helpers": "~0.5.2",
     "next": "13.4.4",
