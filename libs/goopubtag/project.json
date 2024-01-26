@@ -11,7 +11,13 @@
         "outputPath": "dist/libs/goopubtag",
         "main": "libs/goopubtag/src/index.ts",
         "tsConfig": "libs/goopubtag/tsconfig.lib.json",
-        "assets": [],
+        "assets": [
+          {
+            "glob": "README.md",
+            "input": "./libs/goopubtag",
+            "output": "."
+          }
+        ],
         "project": "libs/goopubtag/package.json",
         "compiler": "swc",
         "format": ["cjs", "esm"]

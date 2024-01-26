@@ -1,7 +1,7 @@
 {
   "name": "@iamchu/goopubtag",
   "description": "React library for Google Publisher tag",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "dependencies": {},
   "type": "commonjs",
   "main": "./index.cjs",
