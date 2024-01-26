@@ -1,0 +1,7 @@
+{
+    "gpt-provider": "GPTProvider",
+    "gpt-slot": "GPTSlot",
+    "use-gpt": "useGPT",
+    "type-support": "Type support",
+    "guidelines": "Guidelines"
+}

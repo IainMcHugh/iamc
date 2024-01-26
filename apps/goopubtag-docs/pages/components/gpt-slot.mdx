@@ -1,0 +1,113 @@
+# GPTSlot
+
+The `GPTSlot` is a component representing the Ad unit you want to display on the page.
+
+```tsx showLineNumbers
+import { GPTSlot } from 'goopubtag';
+
+const MyComponent = () => {
+  return (
+    <div>
+      <p>Ad foo</p>
+      <GPTSlot adUnit='abc/xyz' id='foo' />
+      <p>Ad baz</p>
+      <GPTSlot adUnit='abc/xyz' id='baz' />
+    </div>
+  );
+};  
+
+export default MyPage;
+```
+
+Here is a complete list of props available for `GPTSlot`, with details of each below:
+
+| Prop               | type      | Required |
+| :-----------       | :-------- | :------- |
+| slotId             | `string` | ✅ |
+| networkId          | `string` | ❌ |
+| sizes              | `Sizes` | ❌ |
+| outOfPage          | `boolean` | ❌ |
+| fallback           | `CollapseSlot` | ❌ |
+| adUnit             | `string` | ❌ |
+| sizeMapping        | `SizeMapping[]` | ❌ |
+| adSenseAttributes  | `Attributes` | ❌ |
+| targetingArguments | `Attributes` | ❌ |
+| onSlotLoad         | `(event: SlotLoadEvent) => void` | ❌ |
+| onSlotIsViewable   | `(event: SlotViewableEvent) => void` | ❌ |
+| onSlotRenderEnded  | `(event: SlotRenderEndedEvent) => void` | ❌ |
+| shouldRefresh      | `() => boolean` | ❌ |
+
+
+### `slotId`
+
+This is the ad unit code for the ad unit to be displayed
+
+### `networkId`
+
+TBD
+
+### `sizes`
+
+Defines the sizes supported by the ad slot. To gain a better understanding, have a look at the following examples:
+
+- [Ad sizes](/examples/ad_sizes)
+
+Have a look also at our included [guidelines](/components/guidelines) for unit sizes.
+
+### `outOfPage`
+
+This prop determines the out of page behaviour, currently supporting the following types:
+
+- `anchor`
+- `rewarded`
+
+The props are dynamic depending on the outOfPage `type` set. To gain a better understanding, have a look at the following examples:
+
+- [Display Anchor Ad](/examples/display_anchor_ad)
+- [Display Rewarded Ad](/examples/display_rewarded_ad)
+
+
+### `fallback`
+
+This prop specifies the global `collapseEmptyDivs` behaviour. Similar to `fallback` for `GPTProvider`, but with an extra option:
+
+- `default`: Acts the same as if prop is not provided
+- `expand`: Ad will initially take no space, and if filled will _expand_ to fill its space
+- `expand_strict`: Ad will always take configured space, regardless of whether its filled
+- `collapse`: Ad will initally take space configured, and if fails to fill will _collapse_ to no size.
+
+### `adUnit`
+
+This defines the parent-ad-unit-code at a top level for all contained ad slots.
+
+### `sizeMapping`
+
+Use this prop in conjunction with `sizes` for when you need to specify ad unit sizes per viewport size. To gain a better understanding, have a look at the following examples:
+
+- [Ad sizes](/examples/ad_sizes)
+
+Have a look also at our included [guidelines](/components/guidelines) for unit sizes and viewport sizes.
+
+### `adSenseAttributes`
+
+TBD 
+
+### `targetingArguments`
+
+This prop is a simple key-value object that defines the slot level targeting attributes for your GPT configuration.
+
+### `onSlotLoad`
+
+Takes a function that will be called when the slot has loaded. Takes an `event` argument which includes information about the slot.
+
+### `onSlotIsViewable`
+
+Takes a function that will be called when the slot is viewable on the page. Takes an `event` argument which includes information about the slot.
+
+### `onSlotRenderEnded`
+
+Takes a function that will be called when the slot is finished rendering. Takes an `event` argument which includes information about the slot.
+
+### `shouldRefresh`
+
+TBD

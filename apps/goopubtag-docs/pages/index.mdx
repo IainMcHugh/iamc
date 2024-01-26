@@ -1,0 +1,29 @@
+---
+title: Overview
+---
+
+# Goopubtag
+ 
+Goopubtag is a modern solution for [Google Publisher tag](https://developers.google.com/publisher-tag/guides/get-started) in React applications. It was heavily inspired by the widely used [react-dfp](https://www.npmjs.com/package/react-dfp) package, and aims to provide a similar DX but with some improvements:
+
+- Functional approach (with hooks) 🪝
+- Type safety with typescript 🎉
+- Ease of use with `debug` mode 🛠️
+- Support for most recent GPT implementations 🚀
+
+To get started, head over to [setup](/introduction/setup) to see how you can integrate `goopubtag` into your application.
+
+### About Google Publisher Tag
+
+While the purpose of this library is to help developers integrate GPT into their react applications with ease, it's good when debugging to not only search these docs but also the GPT documentation. This library is ultimately a react-ified wrapper around GPT. A simplified version of how it all works is:
+
+1. A script is added to the document `head` tag.
+2. This script will (among other things), retrieve JS methods which it attaches directly to the `window`.
+3. These JS methods allow us to configure GPT within our website.
+
+This library then exposes these JS methods via context and component props, as well as via hooks. While we try to be exhaustive in exposing everything GPT has to offer, a full reference and samples of what you can do can be found here:
+
+- [GPT Reference](https://developers.google.com/publisher-tag/reference)
+- [GPT Samples](https://developers.google.com/publisher-tag/samples)
+
+If there is any features provided by GPT that are not supported by `goopubtag`, feel free to create an issue/reach out so we get it added (PRs welcome!)

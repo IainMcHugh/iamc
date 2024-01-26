@@ -1,0 +1,93 @@
+# useGPT
+
+The `useGPT` hook allows you to call methods supported by google publisher tag. It must be called from a component nested within the `GPTProvider`.
+
+```tsx showLineNumbers
+import { GPTSlot, useGPT } from 'goopubtag';
+
+// Don't forget to define `GPTProvider` further up the component tree!
+const MyComponent = () => {
+  const { refresh } = useGPT();
+  const onClick = () => refresh(['foo']);
+  return (
+    <div>
+      <p>Ad foo</p>
+      <GPTSlot adUnit='abc/xyz' id='foo' />
+      <button onClick={onClick}>Refresh foo</button>
+      <p>Ad baz</p>
+      <GPTSlot adUnit='abc/xyz' id='baz' />
+    </div>
+  );
+};  
+
+export default MyComponent;
+```
+
+Here is a complete list of methods returned from `useGPT`:
+
+
+### refresh
+
+- type: `(adSlots?: string[]) => void`
+
+Calling `refresh` will refresh ads specified in the `adSlots` array provided. Calling `refresh` with no arguments will refresh all ads on the page.
+
+Related examples:
+
+- [Refresh](/examples/refresh)
+
+### setTargetingAttributes
+
+- type: `(slotId: string, attributes: Attributes) => void`
+
+Calling `setTargetingAttributes` will set the slot level targeting attributes passed against the `slotId` provided
+
+Related examples:
+
+- [Key Value Targeting](/examples/key_value_targeting)
+
+### setPageTargetingAttributes
+
+- type: `(attributes: Attributes) => void`
+
+Calling `setPageTargetingAttributes` will set the page level targeting attributes
+
+Related examples:
+
+- [Key Value Targeting](/examples/key_value_targeting)
+
+### clearTargetingAttributes
+
+- type: `(slotId: string, attributes?: string[]) => void`
+
+Calling `clearTargetingAttributes` will clear slot level targeting attributes matching the array of attributes passed, for the `slotId` provided
+
+Related examples:
+
+- [Key Value Targeting](/examples/key_value_targeting)
+
+### clearPageTargetingAttributes
+
+- type: `(attributes?: string[]) => void`
+
+Calling `clearPageTargetingAttributes` will clear the page level targeting attributes matching the array of attributes passed
+
+Related examples:
+
+- [Key Value Targeting](/examples/key_value_targeting)
+
+### setPrivacySettings
+
+- type: `(settings: Partial<PrivacySettings>) => void`
+
+Calling `setPrivacySettings` allows you to configure any the following privacy settings:
+
+- `limitedAds`
+- `nonPersonalizedAds`
+- `childDirectedTreatment`
+- `restrictDataProcessing`
+- `underAgeOfConsent`
+
+Related examples:
+
+- [Configure Privacy](/examples/configure_privacy)
